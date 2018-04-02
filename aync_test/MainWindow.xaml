@@ -1,0 +1,22 @@
+﻿<Window x:Class="aync_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fenestra="clr-namespace:Fenestra;assembly=Fenestra"
+        xmlns:local="clr-namespace:aync_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="button" Content="Start Long Running Task" HorizontalAlignment="Left" FontSize="14" Padding="0,6,0,6" 
+                    Margin="0,12,0,10" VerticalAlignment="Top" Width="175" Height="35" Click="Button_OnClick"/>
+                <fenestra:BizzySpinner Name="spinnerWait" Visibility="Hidden" Width="36" Margin="12,12,0,10" />
+            </StackPanel>
+            <Label Name="lblStatus" FontSize="16" Width="auto" Content="Thread not running" HorizontalContentAlignment="Center" />
+        </StackPanel>
+
+
+    </Grid>
+</Window>
