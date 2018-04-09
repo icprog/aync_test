@@ -8,15 +8,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="button" Content="Start Long Running Task" HorizontalAlignment="Left" FontSize="14" Padding="0,6,0,6" 
-                    Margin="0,12,0,10" VerticalAlignment="Top" Width="175" Height="35" Click="Button_OnClick"/>
+                <Button x:Name="button" Content="Start Long Running Task" HorizontalAlignment="Left" FontSize="10" Padding="0,6,0,6" 
+                    Margin="0,12,20,10" VerticalAlignment="Top" Width="125" Height="35" Click="Button_OnClick"/>
+                <Button x:Name="button1" FontSize="10" Padding="0,6,0,6" 
+                    Margin="0,12,20,10" VerticalAlignment="Top" Width="125" Height="35" Content="Start using async" Click="Button1_OnClick"/>
+                <Button x:Name="button2" FontSize="10" Padding="0,6,0,6" 
+                    Margin="0,12,0,10" VerticalAlignment="Top" Width="125" Height="35" Content="Get MSDN length" Click="Button2_OnClick"/>
                 <fenestra:BizzySpinner Name="spinnerWait" Visibility="Hidden" Width="36" Margin="12,12,0,10" />
             </StackPanel>
             <Label Name="lblStatus" FontSize="16" Width="auto" Content="Thread not running" HorizontalContentAlignment="Center" />
         </StackPanel>
-
+        <TextBox x:Name="resultsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" FontFamily="Lucida Console" 
+                 FontSize="10" VerticalScrollBarVisibility="Visible" Grid.Row="1" Width="515"/>
 
     </Grid>
 </Window>
