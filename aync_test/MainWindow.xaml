@@ -7,25 +7,38 @@
         xmlns:local="clr-namespace:aync_test"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <!--="Left" ="10" 
+                    ="0,10,10,10" ="Top" ="125" ="25-->
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Margin" Value="0,5,10,5" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Width" Value="125" />
+            <Setter Property="Height" Value="25" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="button" Content="Start Long Running Task" HorizontalAlignment="Left" FontSize="10" Padding="0,6,0,6" 
-                    Margin="0,12,20,10" VerticalAlignment="Top" Width="125" Height="35" Click="Button_OnClick"/>
-                <Button x:Name="button1" FontSize="10" Padding="0,6,0,6" 
-                    Margin="0,12,20,10" VerticalAlignment="Top" Width="125" Height="35" Content="Start using async" Click="Button1_OnClick"/>
-                <Button x:Name="button2" FontSize="10" Padding="0,6,0,6" 
-                    Margin="0,12,0,10" VerticalAlignment="Top" Width="125" Height="35" Content="Get MSDN length" Click="Button2_OnClick"/>
-                <fenestra:BizzySpinner Name="spinnerWait" Visibility="Hidden" Width="36" Margin="12,12,0,10" />
-            </StackPanel>
+            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">-->
+            <WrapPanel>
+                <Button x:Name="button" Content="Start Long Running Task" Click="Button_OnClick"/>
+                <Button x:Name="button1" Content="Start using async" Click="Button1_OnClick"/>
+                <Button x:Name="button2" Content="Get MSDN length" Click="Button2_OnClick"/>
+                <Button x:Name="button3" Content="Call Fire" Click="OnFireCallClick"/>
+                <Button x:Name="button4" Content="Stop Fire" Click="OnCancelFireCallClick"/>
+                <fenestra:BizzySpinner Name="spinnerWait" Visibility="Hidden" Width="36" Margin="5,-4,0,0" Height="36" />
+            </WrapPanel>
+            <!--</StackPanel>-->
             <Label Name="lblStatus" FontSize="16" Width="auto" Content="Thread not running" HorizontalContentAlignment="Center" />
         </StackPanel>
         <TextBox x:Name="resultsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" FontFamily="Lucida Console" 
-                 FontSize="10" VerticalScrollBarVisibility="Visible" Grid.Row="1" Width="515"/>
+                 FontSize="10" VerticalScrollBarVisibility="Visible" Grid.Row="1" Width="515" Margin="0"/>
 
     </Grid>
 </Window>
