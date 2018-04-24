@@ -35,7 +35,6 @@
                 <fenestra:BizzySpinner Name="spinnerWait" Visibility="Hidden" Width="36" Margin="5,-4,0,0" Height="36" />
             </WrapPanel>
             <!--</StackPanel>-->
-            <Label Name="lblStatus" FontSize="16" Width="auto" Content="Thread not running" HorizontalContentAlignment="Center" />
         </StackPanel>
         <TextBox x:Name="resultsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" FontFamily="Lucida Console" 
                  FontSize="10" VerticalScrollBarVisibility="Visible" Grid.Row="1" Width="515" Margin="0"/>

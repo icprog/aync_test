@@ -14,18 +14,19 @@ namespace toGetResult
         {
             // Only RUN the task as needed.  FooGet 
             // still allows you to generalize your task.
-            Task.Run(() =>
+            Task.Factory.StartNew(() =>
             {
-                //dynamic value = FooGet();
-                //value.RunSynchronously();
-                //Console.WriteLine(value.Result.Result.ToString());
+                dynamic value = FooGet();
+                value.RunSynchronously();
+                Console.WriteLine(value.Result.Result.ToString());
 
-                Task<object> task = FooGet();
-                task.RunSynchronously();
-                Console.WriteLine(task.Result.ToString());
-            });
+                //Task<object> task = FooGet();
+                //task.RunSynchronously();
+                //Console.WriteLine(task.Result.Result.ToString());
+            }).Wait();
 
-            while (true) Thread.Sleep(100);
+            Console.WriteLine("Task is done.");
+            Console.ReadLine();
         }
 
         private static Task<object> FooGet()

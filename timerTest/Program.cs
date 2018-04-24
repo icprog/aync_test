@@ -23,7 +23,7 @@ namespace timerTest
             var timer = new Timer {Interval = 1000};
             timer.Elapsed += (s, e) =>
             {
-                Console.WriteLine("Tick.");
+                Console.WriteLine($"Tick {e.ToString()}.");
             };
             timer.Start();
 
